@@ -3,7 +3,7 @@
   "id": "synthetiq-anime-direct",
   "familyID": "synthetiq-anime-direct",
   "name": "Synthetiq Flux",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "minimumAppVersion": "2.1.36",
   "contentType": "video",
   "language": "en",
@@ -54,7 +54,7 @@
     "maxConcurrentRequests": 2,
     "maxResponseBytes": 2500000
   },
-  "releaseNotes": "Playback through AniPM/Settlar proceeds only when the provider declares the requested Sub or Dub availability and matching effective language for the episode. Missing or conflicting declarations fail before session creation. Existing AniList and MyAnimeList identity mapping, saved titles, episode mapping, request headers, supplied captions, and session-expiry handling are preserved. Downloads remain disabled. Requires Aroki 2.1.36 or newer.",
+  "releaseNotes": "Adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode and playback routes are unchanged.",
   "operations": {
     "discovery": {
       "sections": [
@@ -68,7 +68,7 @@
             "headers": {
               "Accept": "application/json"
             },
-            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:TRENDING_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status nextAiringEpisode{ episode }}}}\"}"
+            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:TRENDING_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status genres nextAiringEpisode{ episode }}}}\"}"
           },
           "response": {
             "format": "json"
@@ -94,6 +94,24 @@
               },
               "posterURL": {
                 "path": "coverImage.large"
+              }
+            },
+            "metadata": {
+              "genres": {
+                "collection": "genres[*]"
+              },
+              "year": {
+                "path": "seasonYear"
+              },
+              "status": {
+                "path": "status",
+                "transforms": [
+                  {
+                    "op": "replaceFirst",
+                    "find": "_",
+                    "with": " "
+                  }
+                ]
               }
             }
           }
@@ -108,7 +126,7 @@
             "headers": {
               "Accept": "application/json"
             },
-            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:POPULARITY_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status nextAiringEpisode{ episode }}}}\"}"
+            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:POPULARITY_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status genres nextAiringEpisode{ episode }}}}\"}"
           },
           "response": {
             "format": "json"
@@ -135,6 +153,24 @@
               "posterURL": {
                 "path": "coverImage.large"
               }
+            },
+            "metadata": {
+              "genres": {
+                "collection": "genres[*]"
+              },
+              "year": {
+                "path": "seasonYear"
+              },
+              "status": {
+                "path": "status",
+                "transforms": [
+                  {
+                    "op": "replaceFirst",
+                    "find": "_",
+                    "with": " "
+                  }
+                ]
+              }
             }
           }
         }
@@ -147,7 +183,7 @@
         "headers": {
           "Accept": "application/json"
         },
-        "body": "{\"query\":\"query($q:String){Page(page:{page},perPage:20){media(search:$q,type:ANIME,sort:SEARCH_MATCH,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status nextAiringEpisode{ episode }}}}\",\"variables\":{\"q\":\"{query}\"}}"
+        "body": "{\"query\":\"query($q:String){Page(page:{page},perPage:20){media(search:$q,type:ANIME,sort:SEARCH_MATCH,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status genres nextAiringEpisode{ episode }}}}\",\"variables\":{\"q\":\"{query}\"}}"
       },
       "response": {
         "format": "json"
@@ -173,6 +209,24 @@
           },
           "posterURL": {
             "path": "coverImage.large"
+          }
+        },
+        "metadata": {
+          "genres": {
+            "collection": "genres[*]"
+          },
+          "year": {
+            "path": "seasonYear"
+          },
+          "status": {
+            "path": "status",
+            "transforms": [
+              {
+                "op": "replaceFirst",
+                "find": "_",
+                "with": " "
+              }
+            ]
           }
         }
       }

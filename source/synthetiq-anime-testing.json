@@ -3,7 +3,7 @@
   "id": "synthetiq-anime-testing",
   "familyID": "synthetiq-anime-testing",
   "name": "Synthetiq Anime",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "minimumAppVersion": "2.1.36",
   "contentType": "video",
   "language": "en",
@@ -52,7 +52,7 @@
     "maxConcurrentRequests": 2,
     "maxResponseBytes": 2500000
   },
-  "releaseNotes": "Owner-authorized public availability for Aroki 2.1.36+. Existing MAL title IDs, episode IDs, catalogue fallback, and AniKage koto source route are preserved. Version 0.1.3 adds a typed graph selector that requires a unique AniKage row matching the canonical AniList ID plus exact normalized title, year and format before resolving the requested episode/audio. Missing, conflicting or duplicate identity fails closed. Broad live reliability, provider-advertised audio agreement, and spoken-language verification remain pending.",
+  "releaseNotes": "Adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode and playback routes are unchanged.",
   "operations": {
     "discovery": {
       "sections": [
@@ -67,7 +67,7 @@
               "Accept": "application/json",
               "Referer": "https://anicrowd.xyz/"
             },
-            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:TRENDING_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status nextAiringEpisode{ episode }}}}\"}"
+            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:TRENDING_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status genres nextAiringEpisode{ episode }}}}\"}"
           },
           "response": {
             "format": "json"
@@ -93,6 +93,24 @@
               },
               "posterURL": {
                 "path": "coverImage.large"
+              }
+            },
+            "metadata": {
+              "genres": {
+                "collection": "genres[*]"
+              },
+              "year": {
+                "path": "seasonYear"
+              },
+              "status": {
+                "path": "status",
+                "transforms": [
+                  {
+                    "op": "replaceFirst",
+                    "find": "_",
+                    "with": " "
+                  }
+                ]
               }
             }
           }
@@ -108,7 +126,7 @@
               "Accept": "application/json",
               "Referer": "https://anicrowd.xyz/"
             },
-            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:POPULARITY_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status nextAiringEpisode{ episode }}}}\"}"
+            "body": "{\"query\":\"query{Page(page:{page},perPage:20){media(type:ANIME,sort:POPULARITY_DESC,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status genres nextAiringEpisode{ episode }}}}\"}"
           },
           "response": {
             "format": "json"
@@ -135,6 +153,24 @@
               "posterURL": {
                 "path": "coverImage.large"
               }
+            },
+            "metadata": {
+              "genres": {
+                "collection": "genres[*]"
+              },
+              "year": {
+                "path": "seasonYear"
+              },
+              "status": {
+                "path": "status",
+                "transforms": [
+                  {
+                    "op": "replaceFirst",
+                    "find": "_",
+                    "with": " "
+                  }
+                ]
+              }
             }
           }
         }
@@ -148,7 +184,7 @@
           "Accept": "application/json",
           "Referer": "https://anicrowd.xyz/"
         },
-        "body": "{\"query\":\"query($q:String){Page(page:{page},perPage:20){media(search:$q,type:ANIME,sort:SEARCH_MATCH,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status nextAiringEpisode{ episode }}}}\",\"variables\":{\"q\":\"{query}\"}}"
+        "body": "{\"query\":\"query($q:String){Page(page:{page},perPage:20){media(search:$q,type:ANIME,sort:SEARCH_MATCH,isAdult:false){id idMal title{english romaji} description(asHtml:false) coverImage{ large } seasonYear episodes status genres nextAiringEpisode{ episode }}}}\",\"variables\":{\"q\":\"{query}\"}}"
       },
       "response": {
         "format": "json"
@@ -174,6 +210,24 @@
           },
           "posterURL": {
             "path": "coverImage.large"
+          }
+        },
+        "metadata": {
+          "genres": {
+            "collection": "genres[*]"
+          },
+          "year": {
+            "path": "seasonYear"
+          },
+          "status": {
+            "path": "status",
+            "transforms": [
+              {
+                "op": "replaceFirst",
+                "find": "_",
+                "with": " "
+              }
+            ]
           }
         }
       }
@@ -306,22 +360,32 @@
               "collection": "data",
               "matches": [
                 {
-                  "paths": ["anilistId"],
+                  "paths": [
+                    "anilistId"
+                  ],
                   "context": "catalogueID",
                   "comparison": "integer"
                 },
                 {
-                  "paths": ["title.romaji", "title.english", "title.native"],
+                  "paths": [
+                    "title.romaji",
+                    "title.english",
+                    "title.native"
+                  ],
                   "context": "title",
                   "comparison": "normalized-text"
                 },
                 {
-                  "paths": ["year"],
+                  "paths": [
+                    "year"
+                  ],
                   "context": "year",
                   "comparison": "integer"
                 },
                 {
-                  "paths": ["format"],
+                  "paths": [
+                    "format"
+                  ],
                   "context": "format",
                   "comparison": "string"
                 }
