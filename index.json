@@ -1,0 +1,83 @@
+{
+  "connectors" : [
+    {
+      "contentRating" : "unknown",
+      "contentType" : "video",
+      "familyID" : "anikoto",
+      "id" : "anikoto",
+      "language" : "en",
+      "manifest" : {
+        "path" : "connectors\/anikoto\/releases\/4291e995260d78531c4f2546242cfd4fa74e6a2abdd92ae11e013be4d1e26279\/connector.json",
+        "sha256" : "4291e995260d78531c4f2546242cfd4fa74e6a2abdd92ae11e013be4d1e26279",
+        "signature" : "sFX4vlqSmtaQjtzr3LVr1VLczVsC9HdJ+UYP9fMKz8cY06saidQoJCm55otlthUgyOliT8+K79hTNKjzodKUBw=="
+      },
+      "minimumAppVersion" : "2.1.36",
+      "name" : "AniKoto",
+      "releaseNotes" : "0.3.13: follows the source's move to anikototv.bz. Adds the new address to the allowed hosts and accepts saved title links from either address. Routes, title matching and audio handling are unchanged from 0.3.12. Measured on 14 Nov 2026 at 36 of 47 available titles (middle episode); spoken language and device playback were not verified.",
+      "releaseTrack" : "beta",
+      "status" : "active",
+      "version" : "0.3.13"
+    },
+    {
+      "contentRating" : "unknown",
+      "contentType" : "video",
+      "familyID" : "anipm",
+      "id" : "anipm",
+      "language" : "en",
+      "manifest" : {
+        "path" : "connectors\/anipm\/releases\/49ee962133d6963439c75a896a49c28b6acad1a4c4aaa0ecec332b8a5c88245d\/connector.json",
+        "sha256" : "49ee962133d6963439c75a896a49c28b6acad1a4c4aaa0ecec332b8a5c88245d",
+        "signature" : "wxBYuGdMajYuY6W8w7wLW84QpSHhwl+gylhVgIv5T9OVmHbzRIPd5+P84akb5VPqi9OO9q9W0nK4q74YStGBDw=="
+      },
+      "minimumAppVersion" : "2.1.36",
+      "name" : "AniPM (BETA)",
+      "releaseNotes" : "Playback proceeds only when AniPM declares the requested Sub or Dub availability and matching effective language for the episode. Missing or conflicting declarations fail before session creation. Existing saved titles, episode mapping, request headers, supplied captions, and session-expiry handling are preserved. Requires Aroki 2.1.36 or newer.",
+      "releaseTrack" : "beta",
+      "status" : "active",
+      "version" : "0.1.3"
+    },
+    {
+      "contentRating" : "unknown",
+      "contentType" : "video",
+      "familyID" : "synthetiq-anime-direct",
+      "id" : "synthetiq-anime-direct",
+      "language" : "en",
+      "manifest" : {
+        "path" : "connectors\/synthetiq-anime-direct\/releases\/2a3a8ab6dedb955e3b348c8c03558f00591c341d653305fff6b99865eb84800b\/connector.json",
+        "sha256" : "2a3a8ab6dedb955e3b348c8c03558f00591c341d653305fff6b99865eb84800b",
+        "signature" : "831V+T4N2UrME7hLNqwgaKWn8xGTTmFuoiBIKcga8dlJGLQh0l7pswmu4fogqhnwqZQKCdTZXTwTjFPqXvS1AQ=="
+      },
+      "minimumAppVersion" : "2.1.36",
+      "name" : "Synthetiq Flux",
+      "releaseNotes" : "Playback through AniPM\/Settlar proceeds only when the provider declares the requested Sub or Dub availability and matching effective language for the episode. Missing or conflicting declarations fail before session creation. Existing AniList and MyAnimeList identity mapping, saved titles, episode mapping, request headers, supplied captions, and session-expiry handling are preserved. Downloads remain disabled. Requires Aroki 2.1.36 or newer.",
+      "releaseTrack" : "beta",
+      "status" : "active",
+      "version" : "0.1.5"
+    },
+    {
+      "contentRating" : "unknown",
+      "contentType" : "video",
+      "familyID" : "synthetiq-anime-testing",
+      "id" : "synthetiq-anime-testing",
+      "language" : "en",
+      "manifest" : {
+        "path" : "connectors\/synthetiq-anime-testing\/releases\/67d5232e210d90873fb3dc04fdab4b576dfa2958fd4693e5476b0ac7821dd021\/connector.json",
+        "sha256" : "67d5232e210d90873fb3dc04fdab4b576dfa2958fd4693e5476b0ac7821dd021",
+        "signature" : "DNYi\/W4L9HdRtL+xpy7RufQEPmpAwKDsoia7ysau7XYaHUMh3uDAJ6jFfhaRIsAPaSoCkrvlv7uIbXP2TyA3Bg=="
+      },
+      "minimumAppVersion" : "2.1.36",
+      "name" : "Synthetiq Anime",
+      "releaseNotes" : "Owner-authorized public availability for Aroki 2.1.36+. Existing MAL title IDs, episode IDs, catalogue fallback, and AniKage koto source route are preserved. Version 0.1.3 adds a typed graph selector that requires a unique AniKage row matching the canonical AniList ID plus exact normalized title, year and format before resolving the requested episode\/audio. Missing, conflicting or duplicate identity fails closed. Broad live reliability, provider-advertised audio agreement, and spoken-language verification remain pending.",
+      "releaseTrack" : "beta",
+      "status" : "active",
+      "version" : "0.1.3"
+    }
+  ],
+  "enabled" : true,
+  "generatedAt" : 1794701997,
+  "name" : "AROKI Connectors — TEST",
+  "publicKey" : "SkJSFVGqPv3tEf1nTPfAvHnkNU2G8RPolywr0Y0EteM=",
+  "repositoryID" : "aroki-connectors-test",
+  "schemaVersion" : 1,
+  "signature" : "9BlSZaddHto69vP+Kwd5A3YX8VnsN33Rd3JH0dJEr+8uCsETGXYsZAUSO\/lV94L7OuM5Gcbm9etMijOHDT3LCw=="
+}
