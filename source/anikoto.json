@@ -3,8 +3,8 @@
   "id": "anikoto",
   "familyID": "anikoto",
   "name": "AniKoto",
-  "version": "0.3.13",
-  "minimumAppVersion": "2.1.36",
+  "version": "0.3.14",
+  "minimumAppVersion": "2.1.37",
   "contentType": "video",
   "language": "en",
   "contentRating": "unknown",
@@ -27,6 +27,14 @@
     "anikage.cc",
     "og.bakayaro.live",
     "*.bakayaro.live"
+  ],
+  "alternateOrigins": [
+    {
+      "primary": "anikototv.to",
+      "alternates": [
+        "anikototv.bz"
+      ]
+    }
   ],
   "capabilities": [
     "discovery",
@@ -74,10 +82,6 @@
                   {
                     "op": "removePrefix",
                     "value": "https://anikototv.to/watch/"
-                  },
-                  {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
                   },
                   {
                     "op": "removeSuffix",
@@ -135,10 +139,6 @@
                     "value": "https://anikototv.to/watch/"
                   },
                   {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
-                  },
-                  {
                     "op": "removeSuffix",
                     "value": "/ep-1"
                   }
@@ -192,10 +192,6 @@
                   {
                     "op": "removePrefix",
                     "value": "https://anikototv.to/watch/"
-                  },
-                  {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
                   },
                   {
                     "op": "removeSuffix",
@@ -253,10 +249,6 @@
                     "value": "https://anikototv.to/watch/"
                   },
                   {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
-                  },
-                  {
                     "op": "removeSuffix",
                     "value": "/ep-1"
                   }
@@ -310,10 +302,6 @@
                   {
                     "op": "removePrefix",
                     "value": "https://anikototv.to/watch/"
-                  },
-                  {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
                   },
                   {
                     "op": "removeSuffix",
@@ -371,10 +359,6 @@
                     "value": "https://anikototv.to/watch/"
                   },
                   {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
-                  },
-                  {
                     "op": "removeSuffix",
                     "value": "/ep-1"
                   }
@@ -428,10 +412,6 @@
                   {
                     "op": "removePrefix",
                     "value": "https://anikototv.to/watch/"
-                  },
-                  {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
                   },
                   {
                     "op": "removeSuffix",
@@ -489,10 +469,6 @@
                     "value": "https://anikototv.to/watch/"
                   },
                   {
-                    "op": "removePrefix",
-                    "value": "https://anikototv.bz/watch/"
-                  },
-                  {
                     "op": "removeSuffix",
                     "value": "/ep-1"
                   }
@@ -540,10 +516,6 @@
               {
                 "op": "removePrefix",
                 "value": "https://anikototv.to/watch/"
-              },
-              {
-                "op": "removePrefix",
-                "value": "https://anikototv.bz/watch/"
               },
               {
                 "op": "removeSuffix",
@@ -833,17 +805,7 @@
                     "anilistId"
                   ],
                   "context": "catalogue",
-                  "comparison": "integer",
-                  "optional": true
-                },
-                {
-                  "paths": [
-                    "title.romaji",
-                    "title.english",
-                    "title.native"
-                  ],
-                  "context": "title",
-                  "comparison": "normalized-text"
+                  "comparison": "integer"
                 },
                 {
                   "paths": [
@@ -858,6 +820,40 @@
                   ],
                   "context": "format",
                   "comparison": "string"
+                }
+              ],
+              "alternatives": [
+                {
+                  "matches": [
+                    {
+                      "paths": [
+                        "title.romaji",
+                        "title.english",
+                        "title.native"
+                      ],
+                      "context": "title",
+                      "comparison": "normalized-text",
+                      "normalize": [
+                        "strip-parenthesized-year",
+                        "strip-series-prefix",
+                        "season-numerals"
+                      ]
+                    },
+                    {
+                      "paths": [
+                        "year"
+                      ],
+                      "context": "year",
+                      "comparison": "integer"
+                    },
+                    {
+                      "paths": [
+                        "format"
+                      ],
+                      "context": "format",
+                      "comparison": "string"
+                    }
+                  ]
                 }
               ]
             },
@@ -944,7 +940,9 @@
     }
   },
   "requiredEngineFeatures": [
-    "typed-graph-context-v1"
+    "typed-graph-context-v1",
+    "alternate-origins-v1",
+    "selection-alternatives-v1"
   ],
-  "releaseNotes": "0.3.13: follows the source's move to anikototv.bz. Adds the new address to the allowed hosts and accepts saved title links from either address. Routes, title matching and audio handling are unchanged from 0.3.12. Measured on 14 Nov 2026 at 36 of 47 available titles (middle episode); spoken language and device playback were not verified."
+  "releaseNotes": "0.3.14 needs Aroki 2.1.37 or newer. It follows AniKoto's move between its two web addresses automatically and keeps saved titles working, and it matches a title to its stream source by the AniList number first, then by title, year and format with safer handling of season numbers, series prefixes and year suffixes, so more titles find a source. A wrong season is never accepted as a match. Search, episode and playback routes and Sub/Dub handling are unchanged. Not yet checked on a device; spoken language not verified."
 }

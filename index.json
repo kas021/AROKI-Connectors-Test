@@ -7,16 +7,16 @@
       "id" : "anikoto",
       "language" : "en",
       "manifest" : {
-        "path" : "connectors\/anikoto\/releases\/4291e995260d78531c4f2546242cfd4fa74e6a2abdd92ae11e013be4d1e26279\/connector.json",
-        "sha256" : "4291e995260d78531c4f2546242cfd4fa74e6a2abdd92ae11e013be4d1e26279",
-        "signature" : "IbNyqU\/5WdYtznz5igoZvhdRXb6XXjAYMcoqK1hFCjUDH3\/sFOzGxsJWArSCaHYl4bNdvAbd0N9G4uFbLtiXBw=="
+        "path" : "connectors\/anikoto\/releases\/689cc6d610414cb0eb47e7f528d156410afbb35c517011599f4793dff560a071\/connector.json",
+        "sha256" : "689cc6d610414cb0eb47e7f528d156410afbb35c517011599f4793dff560a071",
+        "signature" : "OVFfAF3cPkK8Hh3HA1tdzQ9wfztijWKTzA7rY5SgS6Xb3MaZIhbGbOIoOidPNpXMymfLOzY57kZa93yeoFUuDg=="
       },
-      "minimumAppVersion" : "2.1.36",
+      "minimumAppVersion" : "2.1.37",
       "name" : "AniKoto",
-      "releaseNotes" : "0.3.13: follows the source's move to anikototv.bz. Adds the new address to the allowed hosts and accepts saved title links from either address. Routes, title matching and audio handling are unchanged from 0.3.12. Measured on 14 Nov 2026 at 36 of 47 available titles (middle episode); spoken language and device playback were not verified.",
+      "releaseNotes" : "0.3.14 needs Aroki 2.1.37 or newer. It follows AniKoto's move between its two web addresses automatically and keeps saved titles working, and it matches a title to its stream source by the AniList number first, then by title, year and format with safer handling of season numbers, series prefixes and year suffixes, so more titles find a source. A wrong season is never accepted as a match. Search, episode and playback routes and Sub\/Dub handling are unchanged. Not yet checked on a device; spoken language not verified.",
       "releaseTrack" : "beta",
       "status" : "active",
-      "version" : "0.3.13"
+      "version" : "0.3.14"
     },
     {
       "contentRating" : "unknown",
@@ -27,7 +27,7 @@
       "manifest" : {
         "path" : "connectors\/anipm\/releases\/49ee962133d6963439c75a896a49c28b6acad1a4c4aaa0ecec332b8a5c88245d\/connector.json",
         "sha256" : "49ee962133d6963439c75a896a49c28b6acad1a4c4aaa0ecec332b8a5c88245d",
-        "signature" : "4YDDQQNnd+6pKU83A\/I8lA+ZhxMXS2z8mlNDXgImXHQM7tcllcLO56VuWwItvY4fQmm9kvgq6U2yT9eHeg4uCw=="
+        "signature" : "6HJyjAqgWroxc\/UdU+MEdwfCoYlcf2KbZLIgrGNz7qkqZlnYddp33jr0WNVHH5dMMAJiOPxzFcwMxLhHHeCRDg=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "AniPM (BETA)",
@@ -45,7 +45,7 @@
       "manifest" : {
         "path" : "connectors\/synthetiq-anime-direct\/releases\/71db638ec3b050502c2c7728d33fc17c98319e530a728ff41c2f77c3e4bb1981\/connector.json",
         "sha256" : "71db638ec3b050502c2c7728d33fc17c98319e530a728ff41c2f77c3e4bb1981",
-        "signature" : "vr66xAQGH7bgBTIV3nfG3TXTWAiswDWxyA2dqb1GgMuWi3CMIYQsyn5eaq4bpDMdXZYLkiXda1z3eONPQtz5CQ=="
+        "signature" : "nXFtpEg93Yl9tkTKyUPp8eqLlT1iwzWG0A91WqJEUOj2zwgx4ZJiV3507FX39YGHIBJ\/12hgkQfejseZ+Uk3Bg=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "Synthetiq Flux",
@@ -63,7 +63,7 @@
       "manifest" : {
         "path" : "connectors\/synthetiq-anime-testing\/releases\/a8f250f5fde24744d451ca8d93e1bcf920b8756935e48212e61bf545db50c6eb\/connector.json",
         "sha256" : "a8f250f5fde24744d451ca8d93e1bcf920b8756935e48212e61bf545db50c6eb",
-        "signature" : "\/y3UMLGLbHq5SM332JL\/YT2gRF52aURRVlfd4JYJyspPClSy+xN1uF\/QrrTxTd+aYLQOy8ks1yUwLtauNmh7AA=="
+        "signature" : "uO7VsHtPf0Y8K9Ya8Wk7mPTvMx+r0Cajh82oyEjDO1gYpZDV2b8DOr19j6OUFGmayzov4Cwls4D\/SlkPZzFwAQ=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "Synthetiq Anime",
@@ -74,10 +74,10 @@
     }
   ],
   "enabled" : true,
-  "generatedAt" : 1794704907,
+  "generatedAt" : 1794705053,
   "name" : "AROKI Connectors — TEST",
   "publicKey" : "SkJSFVGqPv3tEf1nTPfAvHnkNU2G8RPolywr0Y0EteM=",
   "repositoryID" : "aroki-connectors-test",
   "schemaVersion" : 1,
-  "signature" : "exY04shcILYv6Bj9m8DXQ2gUbGCL6ay4wzPHbeMz1nDeRGRroOFZV1efDMPInh3G57jjjxadgZXYr5Z6s453Dw=="
+  "signature" : "znpp6SUTWCMP0\/qtaA2wo4OtzfbyMx\/eo4nXdpCpqbqA5CinoL0LiBHLl5gmnTl0Qw\/DaXyGCMkSNZFG2NnUDQ=="
 }

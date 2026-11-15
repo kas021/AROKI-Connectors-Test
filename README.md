@@ -5,8 +5,8 @@ needing the next app version can be tried by the owner and testers without affec
 people on the released app (2.1.36).
 
 - **Who it is for:** the owner and named testers only. Do not add it to your everyday app.
-- **What is in it:** AniKoto 0.3.13 and AniPM 0.1.3 (byte-identical to the live official files),
-  plus two test candidates: Synthetiq Flux 0.1.6 and Synthetiq Anime 0.1.4, which add genres, year and
+- **What is in it:** AniKoto 0.3.14 (test only, needs Aroki 2.1.37 or newer; the app 2.1.36 does not offer it),
+  AniPM 0.1.3 (byte-identical to live), plus two modules: Synthetiq Flux 0.1.6 and Synthetiq Anime 0.1.4, which add genres, year and
   status to title cards so Find a niche can filter them. The live official versions are 0.1.5 and 0.1.3.
   Everything is signed with a separate test key.
 - **Repository ID:** `aroki-connectors-test`. Signing key: this feed has its own key,
