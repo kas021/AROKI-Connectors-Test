@@ -9,7 +9,7 @@
       "manifest" : {
         "path" : "connectors\/anikoto\/releases\/4291e995260d78531c4f2546242cfd4fa74e6a2abdd92ae11e013be4d1e26279\/connector.json",
         "sha256" : "4291e995260d78531c4f2546242cfd4fa74e6a2abdd92ae11e013be4d1e26279",
-        "signature" : "EBYl1MJCxfDspHkIcakQxi34mmZE1Us8WfHik2rBOCkzb15ETiLNlRmwsQJyFDiy6rZxG4LpsrJCuw+s6ZWJDQ=="
+        "signature" : "IbNyqU\/5WdYtznz5igoZvhdRXb6XXjAYMcoqK1hFCjUDH3\/sFOzGxsJWArSCaHYl4bNdvAbd0N9G4uFbLtiXBw=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "AniKoto",
@@ -27,7 +27,7 @@
       "manifest" : {
         "path" : "connectors\/anipm\/releases\/49ee962133d6963439c75a896a49c28b6acad1a4c4aaa0ecec332b8a5c88245d\/connector.json",
         "sha256" : "49ee962133d6963439c75a896a49c28b6acad1a4c4aaa0ecec332b8a5c88245d",
-        "signature" : "q9EI4s2UyZOezFUuYfeU622iF3\/AQhEG3vz1TaNWojGffCiSUHN6b8w3Sv9cVGQ408zyjvVDihh0tOe9WxYYDw=="
+        "signature" : "4YDDQQNnd+6pKU83A\/I8lA+ZhxMXS2z8mlNDXgImXHQM7tcllcLO56VuWwItvY4fQmm9kvgq6U2yT9eHeg4uCw=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "AniPM (BETA)",
@@ -43,13 +43,13 @@
       "id" : "synthetiq-anime-direct",
       "language" : "en",
       "manifest" : {
-        "path" : "connectors\/synthetiq-anime-direct\/releases\/d7a8fe25e7d7aa544eed1e93e4499e60eaeb8c395f1c84d8aac30f50f09831ed\/connector.json",
-        "sha256" : "d7a8fe25e7d7aa544eed1e93e4499e60eaeb8c395f1c84d8aac30f50f09831ed",
-        "signature" : "EYEdTJG8dpF1y5OFAqswb6CMv1fgzZVzGASSd9CgNQJATQxjpmF2asay66KZyJX\/bMuptKfs7DUyXrBRHyz4Dw=="
+        "path" : "connectors\/synthetiq-anime-direct\/releases\/71db638ec3b050502c2c7728d33fc17c98319e530a728ff41c2f77c3e4bb1981\/connector.json",
+        "sha256" : "71db638ec3b050502c2c7728d33fc17c98319e530a728ff41c2f77c3e4bb1981",
+        "signature" : "vr66xAQGH7bgBTIV3nfG3TXTWAiswDWxyA2dqb1GgMuWi3CMIYQsyn5eaq4bpDMdXZYLkiXda1z3eONPQtz5CQ=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "Synthetiq Flux",
-      "releaseNotes" : "Adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode and playback routes are unchanged.",
+      "releaseNotes" : "0.1.6 adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode, Sub\/Dub and playback routes are unchanged from 0.1.5. Measured on 15 Nov 2026 on a Mac test run: 49 of 50 sampled titles reached playable video. The Niche screen and spoken language were not checked on a device. Requires Aroki 2.1.36 or newer.",
       "releaseTrack" : "beta",
       "status" : "active",
       "version" : "0.1.6"
@@ -61,23 +61,23 @@
       "id" : "synthetiq-anime-testing",
       "language" : "en",
       "manifest" : {
-        "path" : "connectors\/synthetiq-anime-testing\/releases\/4aa0712a8b383672c17c41e452c661326b7a6860b581db177a347622514deda2\/connector.json",
-        "sha256" : "4aa0712a8b383672c17c41e452c661326b7a6860b581db177a347622514deda2",
-        "signature" : "\/U6Fo6yWLdeOW7tmmv46DPRA1c1QwCuYlgRrgd1uIVYmcQ5MHhhi6ZqwFkxoimX2TaTKuvhhzVy+PSoi1Eq7Bg=="
+        "path" : "connectors\/synthetiq-anime-testing\/releases\/a8f250f5fde24744d451ca8d93e1bcf920b8756935e48212e61bf545db50c6eb\/connector.json",
+        "sha256" : "a8f250f5fde24744d451ca8d93e1bcf920b8756935e48212e61bf545db50c6eb",
+        "signature" : "\/y3UMLGLbHq5SM332JL\/YT2gRF52aURRVlfd4JYJyspPClSy+xN1uF\/QrrTxTd+aYLQOy8ks1yUwLtauNmh7AA=="
       },
       "minimumAppVersion" : "2.1.36",
       "name" : "Synthetiq Anime",
-      "releaseNotes" : "Adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode and playback routes are unchanged.",
+      "releaseNotes" : "0.1.4 adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode, Sub\/Dub and playback routes are unchanged from 0.1.3. Measured on 15 Nov 2026 on a Mac test run: 49 of 50 sampled titles reached playable video. The Niche screen and spoken language were not checked on a device. Requires Aroki 2.1.36 or newer.",
       "releaseTrack" : "beta",
       "status" : "active",
       "version" : "0.1.4"
     }
   ],
   "enabled" : true,
-  "generatedAt" : 1794702336,
+  "generatedAt" : 1794704907,
   "name" : "AROKI Connectors — TEST",
   "publicKey" : "SkJSFVGqPv3tEf1nTPfAvHnkNU2G8RPolywr0Y0EteM=",
   "repositoryID" : "aroki-connectors-test",
   "schemaVersion" : 1,
-  "signature" : "RSKANQKeN0yRumHyO\/buRbGi0OXauvXxYdlsfKt6+7IpohXAN8kqR9w83DK57Wh5ep+a\/\/SwQypG7PbejaX5Bg=="
+  "signature" : "exY04shcILYv6Bj9m8DXQ2gUbGCL6ay4wzPHbeMz1nDeRGRroOFZV1efDMPInh3G57jjjxadgZXYr5Z6s453Dw=="
 }

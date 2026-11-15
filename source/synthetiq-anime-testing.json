@@ -52,7 +52,7 @@
     "maxConcurrentRequests": 2,
     "maxResponseBytes": 2500000
   },
-  "releaseNotes": "Adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode and playback routes are unchanged.",
+  "releaseNotes": "0.1.4 adds genres, year and status to Home, Browse and search cards so Find a niche can filter this source. Title identity, episode, Sub/Dub and playback routes are unchanged from 0.1.3. Measured on 15 Nov 2026 on a Mac test run: 49 of 50 sampled titles reached playable video. The Niche screen and spoken language were not checked on a device. Requires Aroki 2.1.36 or newer.",
   "operations": {
     "discovery": {
       "sections": [
